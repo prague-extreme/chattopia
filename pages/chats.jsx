@@ -11,13 +11,14 @@ const MessageFormSocial = dynamic(() =>
   import("react-chat-engine").then((module) => module.MessageFormSocial)
 );
 
-export default function Home({ username, setUsername, secret, setSecret }) {
+export default function Home({ username, setUsername, secret, setSecret, logout, setLogout }) {
   const [showChat, setShowChat] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
     if (typeof document !== undefined) {
       setShowChat(true);
+      setLogout(true)
     }
   }, []);
 
@@ -31,7 +32,7 @@ export default function Home({ username, setUsername, secret, setSecret }) {
 
   return (
     <div className="background">
-      <Navbar setUsername={setUsername} setSecret={setSecret} />
+      <Navbar setUsername={setUsername} setSecret={setSecret} logout={logout} setLogout={setLogout}/>
       <div className="shadow">
         <ChatEngine
           height="calc(100vh - 212px)"

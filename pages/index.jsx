@@ -1,10 +1,9 @@
 
 import { useRouter } from "next/router";
-
 import axios from "axios";
 import Navbar from "../components/Navbar";
 
-const Auth = ({ username, setUsername, secret, setSecret }) => {
+const Auth = ({ username, setUsername, secret, setSecret, logout, setLogout }) => {
 
   const router = useRouter();
 
@@ -27,7 +26,7 @@ const Auth = ({ username, setUsername, secret, setSecret }) => {
 
   return (
     <div className="background">
-      <Navbar setUsername={setUsername} setSecret={setSecret} />
+      <Navbar username={username} secret={secret} setUsername={setUsername} setSecret={setSecret}  />
       <div className="auth-container">
         <form className="auth-form" onSubmit={(e) => onSubmit(e)}>
           <div className="auth-title">ChatTopia</div>
