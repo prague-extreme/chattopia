@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "export NODE_OPTIONS=--openssl-legacy-provider && next start"
   },
   "dependencies": {
     "axios": "^0.23.0",
@@ -18,3 +18,4 @@
     "tailwindcss": "^3.3.2"
   }
 }
+
