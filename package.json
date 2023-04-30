@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "NODE_OPTIONS='--max-old-space-size=4096' next build",
     "start": "export NODE_OPTIONS=--openssl-legacy-provider && next start"
+    
   },
   "dependencies": {
     "axios": "^0.23.0",
